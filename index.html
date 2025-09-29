@@ -245,7 +245,23 @@
         // Load oil wells data from API
         async function loadOilWellsData() {
             try {
-                const response = await fetch('/.netlify/functions/api-proxy?format=json&limit=1000');
+                // Try Netlify function first
+                let response = await fetch('/.netlify/functions/api-proxy?format=json&limit=1000');
+                
+                // If Netlify function fails, try direct API with CORS proxy
+                if (!response.ok) {
+                    console.log('Netlify function failed, trying CORS proxy...');
+                    response = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://api.data.gov.in/resource/0b344af7-b389-4e37-bf49-b4f1e59bbc49?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&limit=1000'));
+                    const proxyData = await response.json();
+                    const data = JSON.parse(proxyData.contents);
+                    
+                    if (data && data.records) {
+                        oilWellsData = data;
+                        updateDashboard(data);
+                    }
+                    return;
+                }
+                
                 const data = await response.json();
                 
                 if (data && data.records) {
@@ -254,6 +270,22 @@
                 }
             } catch (error) {
                 console.error('Error loading data:', error);
+                
+                // Fallback to sample data
+                try {
+                    const sampleResponse = await fetch('sample_wells_data.json');
+                    const sampleData = await sampleResponse.json();
+                    oilWellsData = sampleData;
+                    updateDashboard(sampleData);
+                    console.log('Using sample data as fallback');
+                } catch (sampleError) {
+                    console.error('Failed to load sample data:', sampleError);
+                    // Show error message to user
+                    document.getElementById('total-wells').textContent = 'Data unavailable';
+                    document.getElementById('oil-wells').textContent = 'Data unavailable';
+                    document.getElementById('gas-wells').textContent = 'Data unavailable';
+                }
+                
                 addBotMessage('Sorry, I had trouble loading the latest data. Using cached information.');
             }
         }
