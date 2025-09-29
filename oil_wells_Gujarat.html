@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_de947ce21cad451e6a544fa9f988b733 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_de947ce21cad451e6a544fa9f988b733" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_de947ce21cad451e6a544fa9f988b733 = L.map(
+                "map_de947ce21cad451e6a544fa9f988b733",
+                {
+                    center: [23.0225, 72.5714],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7be29916a10e1f0c176cc15db39b462b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7be29916a10e1f0c176cc15db39b462b.addTo(map_de947ce21cad451e6a544fa9f988b733);
+        
+    
+            var marker_283dca20c45c6f81923cf6bcd11284fc = L.marker(
+                [23.0225, 72.5714],
+                {
+}
+            ).addTo(map_de947ce21cad451e6a544fa9f988b733);
+        
+    
+            var icon_ad0009ed5e0e894f8bb9af73b1626059 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_713e4a17acf5ad04b0c40f53631acac3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_843251a75092ad7b8aaab6df7877cc3d = $(`<div id="html_843251a75092ad7b8aaab6df7877cc3d" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h3>Gujarat</h3>                     <p><strong>Oil Wells:</strong> 3,547</p>                     <p><strong>Percentage of Total:</strong> 47.4%</p>                 </div>                 </div>`)[0];
+                popup_713e4a17acf5ad04b0c40f53631acac3.setContent(html_843251a75092ad7b8aaab6df7877cc3d);
+            
+        
+
+        marker_283dca20c45c6f81923cf6bcd11284fc.bindPopup(popup_713e4a17acf5ad04b0c40f53631acac3)
+        ;
+
+        
+    
+    
+                marker_283dca20c45c6f81923cf6bcd11284fc.setIcon(icon_ad0009ed5e0e894f8bb9af73b1626059);
+            
+</script>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6a24f3e2b2757457cd8f8ff4069d39ce {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6a24f3e2b2757457cd8f8ff4069d39ce" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6a24f3e2b2757457cd8f8ff4069d39ce = L.map(
+                "map_6a24f3e2b2757457cd8f8ff4069d39ce",
+                {
+                    center: [20.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f985112c246f484bdd790faab55bf992 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f985112c246f484bdd790faab55bf992.addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var marker_daaaaa6641fe9f5a7b5ad0e20bc51f80 = L.marker(
+                [28.6139, 77.209],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_08eac2420210a7b551754dd4bc7c8b64 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4700ae2b77f23f855231b020a995c3c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_505dd001bda3cd48f6bee47d423f4b81 = $(`<div id="html_505dd001bda3cd48f6bee47d423f4b81" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: red;">🏢 ONGC HQ - New Delhi</h4>                         <p><strong>Company:</strong> ONGC</p>                         <p><strong>Type:</strong> Headquarters</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_4700ae2b77f23f855231b020a995c3c0.setContent(html_505dd001bda3cd48f6bee47d423f4b81);
+            
+        
+
+        marker_daaaaa6641fe9f5a7b5ad0e20bc51f80.bindPopup(popup_4700ae2b77f23f855231b020a995c3c0)
+        ;
+
+        
+    
+    
+            marker_daaaaa6641fe9f5a7b5ad0e20bc51f80.bindTooltip(
+                `<div>
+                     ONGC - ONGC HQ - New Delhi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_daaaaa6641fe9f5a7b5ad0e20bc51f80.setIcon(icon_08eac2420210a7b551754dd4bc7c8b64);
+            
+    
+            var marker_57d24e5b4fc859b705be31b5c18c92f5 = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_63a7130c65660fa623931906f1f4df10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_637c1e0e2339171751d86f95b2a79b7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6fa9b50c1f4efb5fed77f244249f912b = $(`<div id="html_6fa9b50c1f4efb5fed77f244249f912b" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: red;">🏢 ONGC Mumbai</h4>                         <p><strong>Company:</strong> ONGC</p>                         <p><strong>Type:</strong> Regional Office</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_637c1e0e2339171751d86f95b2a79b7f.setContent(html_6fa9b50c1f4efb5fed77f244249f912b);
+            
+        
+
+        marker_57d24e5b4fc859b705be31b5c18c92f5.bindPopup(popup_637c1e0e2339171751d86f95b2a79b7f)
+        ;
+
+        
+    
+    
+            marker_57d24e5b4fc859b705be31b5c18c92f5.bindTooltip(
+                `<div>
+                     ONGC - ONGC Mumbai
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_57d24e5b4fc859b705be31b5c18c92f5.setIcon(icon_63a7130c65660fa623931906f1f4df10);
+            
+    
+            var marker_c37dad7ce06af5402cade2a08c585b21 = L.marker(
+                [30.3165, 78.0322],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_bc4fff565db2dfe7fa40dc2abb3ebbb4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_98151cf88b1549458cb5f743ad5b453c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9998df23d1beae8db801a89cc7583e9b = $(`<div id="html_9998df23d1beae8db801a89cc7583e9b" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: red;">🏢 ONGC Dehradun</h4>                         <p><strong>Company:</strong> ONGC</p>                         <p><strong>Type:</strong> Technical Center</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_98151cf88b1549458cb5f743ad5b453c.setContent(html_9998df23d1beae8db801a89cc7583e9b);
+            
+        
+
+        marker_c37dad7ce06af5402cade2a08c585b21.bindPopup(popup_98151cf88b1549458cb5f743ad5b453c)
+        ;
+
+        
+    
+    
+            marker_c37dad7ce06af5402cade2a08c585b21.bindTooltip(
+                `<div>
+                     ONGC - ONGC Dehradun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c37dad7ce06af5402cade2a08c585b21.setIcon(icon_bc4fff565db2dfe7fa40dc2abb3ebbb4);
+            
+    
+            var marker_53d50a483835b1b94625e1801e634f8a = L.marker(
+                [23.0225, 72.5714],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_b7155e7d175598b4b5ecb2689a069494 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_abc93ec5bbf549ccae98ea3aa9665e17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee7a02ba472eb38d5174d64d03707f78 = $(`<div id="html_ee7a02ba472eb38d5174d64d03707f78" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: red;">🏢 ONGC Ahmedabad</h4>                         <p><strong>Company:</strong> ONGC</p>                         <p><strong>Type:</strong> Regional Office</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_abc93ec5bbf549ccae98ea3aa9665e17.setContent(html_ee7a02ba472eb38d5174d64d03707f78);
+            
+        
+
+        marker_53d50a483835b1b94625e1801e634f8a.bindPopup(popup_abc93ec5bbf549ccae98ea3aa9665e17)
+        ;
+
+        
+    
+    
+            marker_53d50a483835b1b94625e1801e634f8a.bindTooltip(
+                `<div>
+                     ONGC - ONGC Ahmedabad
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_53d50a483835b1b94625e1801e634f8a.setIcon(icon_b7155e7d175598b4b5ecb2689a069494);
+            
+    
+            var marker_5b1c00a438e5e13ee526ab84b5dfdcc6 = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_29e207661f183c0583fc916d5bc02cfc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e20f653e9c0b3899f99d6b2e795fa48c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_761e33574f8b7cf3e04b9bce02fd8f3a = $(`<div id="html_761e33574f8b7cf3e04b9bce02fd8f3a" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: blue;">🏢 RIL Mumbai</h4>                         <p><strong>Company:</strong> Reliance Industries</p>                         <p><strong>Type:</strong> Headquarters</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_e20f653e9c0b3899f99d6b2e795fa48c.setContent(html_761e33574f8b7cf3e04b9bce02fd8f3a);
+            
+        
+
+        marker_5b1c00a438e5e13ee526ab84b5dfdcc6.bindPopup(popup_e20f653e9c0b3899f99d6b2e795fa48c)
+        ;
+
+        
+    
+    
+            marker_5b1c00a438e5e13ee526ab84b5dfdcc6.bindTooltip(
+                `<div>
+                     Reliance Industries - RIL Mumbai
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5b1c00a438e5e13ee526ab84b5dfdcc6.setIcon(icon_29e207661f183c0583fc916d5bc02cfc);
+            
+    
+            var marker_1942f9d6427e2e4bcdc724f57a158a4c = L.marker(
+                [22.4707, 70.0577],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_2a79a3f6e1fb0f2d732a9c3e3fea05c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbb505edb9cc1c1e772305054f39e579 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85a267299151afaad5d79c686a0951d4 = $(`<div id="html_85a267299151afaad5d79c686a0951d4" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: blue;">🏢 RIL Jamnagar</h4>                         <p><strong>Company:</strong> Reliance Industries</p>                         <p><strong>Type:</strong> Refinery Complex</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_dbb505edb9cc1c1e772305054f39e579.setContent(html_85a267299151afaad5d79c686a0951d4);
+            
+        
+
+        marker_1942f9d6427e2e4bcdc724f57a158a4c.bindPopup(popup_dbb505edb9cc1c1e772305054f39e579)
+        ;
+
+        
+    
+    
+            marker_1942f9d6427e2e4bcdc724f57a158a4c.bindTooltip(
+                `<div>
+                     Reliance Industries - RIL Jamnagar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1942f9d6427e2e4bcdc724f57a158a4c.setIcon(icon_2a79a3f6e1fb0f2d732a9c3e3fea05c9);
+            
+    
+            var marker_31f256712b25fd661630ec9071c888d6 = L.marker(
+                [16.1667, 81.1333],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_c41619dbd22bf7628639f2218ce8a3cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4988c20ffb8fb43a371238d2aa994205 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a0821760bcd806b8666b51f38ba3d28 = $(`<div id="html_0a0821760bcd806b8666b51f38ba3d28" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: blue;">🏢 RIL KG-D6</h4>                         <p><strong>Company:</strong> Reliance Industries</p>                         <p><strong>Type:</strong> Offshore Block</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_4988c20ffb8fb43a371238d2aa994205.setContent(html_0a0821760bcd806b8666b51f38ba3d28);
+            
+        
+
+        marker_31f256712b25fd661630ec9071c888d6.bindPopup(popup_4988c20ffb8fb43a371238d2aa994205)
+        ;
+
+        
+    
+    
+            marker_31f256712b25fd661630ec9071c888d6.bindTooltip(
+                `<div>
+                     Reliance Industries - RIL KG-D6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31f256712b25fd661630ec9071c888d6.setIcon(icon_c41619dbd22bf7628639f2218ce8a3cf);
+            
+    
+            var marker_d38a80c858a739ce956020cf5e7ca517 = L.marker(
+                [28.4595, 77.0266],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_75b20c9579209d65c92075e94758d7ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d248899e61cc9629822066b15241a4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae61beadc098374dad32e2a029194bd1 = $(`<div id="html_ae61beadc098374dad32e2a029194bd1" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: green;">🏢 Cairn Gurugram</h4>                         <p><strong>Company:</strong> Cairn Oil & Gas</p>                         <p><strong>Type:</strong> Headquarters</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_9d248899e61cc9629822066b15241a4c.setContent(html_ae61beadc098374dad32e2a029194bd1);
+            
+        
+
+        marker_d38a80c858a739ce956020cf5e7ca517.bindPopup(popup_9d248899e61cc9629822066b15241a4c)
+        ;
+
+        
+    
+    
+            marker_d38a80c858a739ce956020cf5e7ca517.bindTooltip(
+                `<div>
+                     Cairn Oil & Gas - Cairn Gurugram
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d38a80c858a739ce956020cf5e7ca517.setIcon(icon_75b20c9579209d65c92075e94758d7ab);
+            
+    
+            var marker_b58fa0b2d4c7f024525a653c76d24988 = L.marker(
+                [26.2389, 73.0243],
+                {
+}
+            ).addTo(map_6a24f3e2b2757457cd8f8ff4069d39ce);
+        
+    
+            var icon_d1684e335952c7ca9dd2cb7f7a717975 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e7cea29ccb02d593047e20b79b72872 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33087cd39b52fc688ec8538df62566dd = $(`<div id="html_33087cd39b52fc688ec8538df62566dd" style="width: 100.0%; height: 100.0%;">                     <div style="width: 250px;">                         <h4 style="color: green;">🏢 Cairn Rajasthan</h4>                         <p><strong>Company:</strong> Cairn Oil & Gas</p>                         <p><strong>Type:</strong> Production Block</p>                         <p><strong>Status:</strong> Active</p>                     </div>                     </div>`)[0];
+                popup_9e7cea29ccb02d593047e20b79b72872.setContent(html_33087cd39b52fc688ec8538df62566dd);
+            
+        
+
+        marker_b58fa0b2d4c7f024525a653c76d24988.bindPopup(popup_9e7cea29ccb02d593047e20b79b72872)
+        ;
+
+        
+    
+    
+            marker_b58fa0b2d4c7f024525a653c76d24988.bindTooltip(
+                `<div>
+                     Cairn Oil & Gas - Cairn Rajasthan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b58fa0b2d4c7f024525a653c76d24988.setIcon(icon_d1684e335952c7ca9dd2cb7f7a717975);
+            
+</script>
+</html>

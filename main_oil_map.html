@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ad75cadd849b50e7be8b36b617eb1a2f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ad75cadd849b50e7be8b36b617eb1a2f" ></div>
+        
+    
+            
+        
+</body>
+<script>
+    
+    
+            var map_ad75cadd849b50e7be8b36b617eb1a2f = L.map(
+                "map_ad75cadd849b50e7be8b36b617eb1a2f",
+                {
+                    center: [20.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_74ff761098667be18ad34ee0aba915f5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_74ff761098667be18ad34ee0aba915f5.addTo(map_ad75cadd849b50e7be8b36b617eb1a2f);
+        
+    
+            var tile_layer_4797eb1fcfaf95c8a98d482d01eae07e = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4797eb1fcfaf95c8a98d482d01eae07e.addTo(map_ad75cadd849b50e7be8b36b617eb1a2f);
+        
+    
+            var tile_layer_9bd196c9e7af4f4b4f91ea75dbe7fb32 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9bd196c9e7af4f4b4f91ea75dbe7fb32.addTo(map_ad75cadd849b50e7be8b36b617eb1a2f);
+        
+    
+            var marker_cluster_893a550aba782ffa39f967511e1cfac8 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_15be34e921856b7a3015cc5acc548a3f = L.marker(
+                [23.0225, 72.5714],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_2c5290de9600bd5c1ce24ae7c370010a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec1c320a5b8094a43af3ca9a39a3ff35 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3533e1a6017bc99754226cb7cc8c8350 = $(`<div id="html_3533e1a6017bc99754226cb7cc8c8350" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: red; margin-bottom: 15px;">🛢️ Gujarat</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 3,547</p>                         <p><strong>Percentage:</strong> 47.4%</p>                         <p><strong>Rank:</strong> #1</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: ONGC, Reliance, Cairn</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_ec1c320a5b8094a43af3ca9a39a3ff35.setContent(html_3533e1a6017bc99754226cb7cc8c8350);
+            
+        
+
+        marker_15be34e921856b7a3015cc5acc548a3f.bindPopup(popup_ec1c320a5b8094a43af3ca9a39a3ff35)
+        ;
+
+        
+    
+    
+            marker_15be34e921856b7a3015cc5acc548a3f.bindTooltip(
+                `<div>
+                     Gujarat: 3,547 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_15be34e921856b7a3015cc5acc548a3f.setIcon(icon_2c5290de9600bd5c1ce24ae7c370010a);
+            
+    
+            var marker_d33da849f66dbd8b277d7bcc2566ccc1 = L.marker(
+                [27.0238, 74.2179],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_a2c56378f8f715dcb03064e750f494b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab31c82fb1e55b2ac03794e35b8a99d2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2615a8e334750049505ed4fa22b59774 = $(`<div id="html_2615a8e334750049505ed4fa22b59774" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: orange; margin-bottom: 15px;">🛢️ Rajasthan</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 459</p>                         <p><strong>Percentage:</strong> 6.1%</p>                         <p><strong>Rank:</strong> #3</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: Cairn, ONGC</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_ab31c82fb1e55b2ac03794e35b8a99d2.setContent(html_2615a8e334750049505ed4fa22b59774);
+            
+        
+
+        marker_d33da849f66dbd8b277d7bcc2566ccc1.bindPopup(popup_ab31c82fb1e55b2ac03794e35b8a99d2)
+        ;
+
+        
+    
+    
+            marker_d33da849f66dbd8b277d7bcc2566ccc1.bindTooltip(
+                `<div>
+                     Rajasthan: 459 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d33da849f66dbd8b277d7bcc2566ccc1.setIcon(icon_a2c56378f8f715dcb03064e750f494b0);
+            
+    
+            var marker_910fc1ffecf60a1b24d2802a3b8e1e56 = L.marker(
+                [26.2006, 92.9376],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_7d7b7b5f729ebac4b6e17cda4d9835fe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b33e4aa6b43ff22203d064b31162b61 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7d6800752d0c2bea1f4b52189b7868d5 = $(`<div id="html_7d6800752d0c2bea1f4b52189b7868d5" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: orange; margin-bottom: 15px;">🛢️ Assam & Arunachal Pradesh</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 903</p>                         <p><strong>Percentage:</strong> 12.1%</p>                         <p><strong>Rank:</strong> #2</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: ONGC, Oil India</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_1b33e4aa6b43ff22203d064b31162b61.setContent(html_7d6800752d0c2bea1f4b52189b7868d5);
+            
+        
+
+        marker_910fc1ffecf60a1b24d2802a3b8e1e56.bindPopup(popup_1b33e4aa6b43ff22203d064b31162b61)
+        ;
+
+        
+    
+    
+            marker_910fc1ffecf60a1b24d2802a3b8e1e56.bindTooltip(
+                `<div>
+                     Assam & Arunachal Pradesh: 903 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_910fc1ffecf60a1b24d2802a3b8e1e56.setIcon(icon_7d7b7b5f729ebac4b6e17cda4d9835fe);
+            
+    
+            var marker_38efdf3d60d04be29be21dc428164037 = L.marker(
+                [23.9408, 91.9882],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_5d6bdf47f7e053b9caea7f1439a0f55a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85493c332258bf39ac91cae6e77413c1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_975916599978e3a12ca0e362711facb7 = $(`<div id="html_975916599978e3a12ca0e362711facb7" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: blue; margin-bottom: 15px;">🛢️ Tripura</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 89</p>                         <p><strong>Percentage:</strong> 1.2%</p>                         <p><strong>Rank:</strong> #8</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: ONGC</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_85493c332258bf39ac91cae6e77413c1.setContent(html_975916599978e3a12ca0e362711facb7);
+            
+        
+
+        marker_38efdf3d60d04be29be21dc428164037.bindPopup(popup_85493c332258bf39ac91cae6e77413c1)
+        ;
+
+        
+    
+    
+            marker_38efdf3d60d04be29be21dc428164037.bindTooltip(
+                `<div>
+                     Tripura: 89 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_38efdf3d60d04be29be21dc428164037.setIcon(icon_5d6bdf47f7e053b9caea7f1439a0f55a);
+            
+    
+            var marker_51013d3ad4606cb93fdbbf7c859b2126 = L.marker(
+                [15.9129, 79.74],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_9553633334a549ddd3f0494e0a580aa1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13c351e06c9c659de0989b5b4758e8bf = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1165cf8cfcb72377099c7c7557246940 = $(`<div id="html_1165cf8cfcb72377099c7c7557246940" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: orange; margin-bottom: 15px;">🛢️ Andhra Pradesh</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 139</p>                         <p><strong>Percentage:</strong> 1.9%</p>                         <p><strong>Rank:</strong> #7</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: ONGC</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_13c351e06c9c659de0989b5b4758e8bf.setContent(html_1165cf8cfcb72377099c7c7557246940);
+            
+        
+
+        marker_51013d3ad4606cb93fdbbf7c859b2126.bindPopup(popup_13c351e06c9c659de0989b5b4758e8bf)
+        ;
+
+        
+    
+    
+            marker_51013d3ad4606cb93fdbbf7c859b2126.bindTooltip(
+                `<div>
+                     Andhra Pradesh: 139 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_51013d3ad4606cb93fdbbf7c859b2126.setIcon(icon_9553633334a549ddd3f0494e0a580aa1);
+            
+    
+            var marker_e960e6b85927850ce5965c2e54296d12 = L.marker(
+                [11.1271, 78.6569],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_7f566ff6c1e6e0444e1ffed6c27b162e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6cb9288d776837a094b2923a6329e280 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ba7c9c6e64a0e1b88a72ca9d2d441f5a = $(`<div id="html_ba7c9c6e64a0e1b88a72ca9d2d441f5a" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: orange; margin-bottom: 15px;">🛢️ Tamil Nadu</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 188</p>                         <p><strong>Percentage:</strong> 2.5%</p>                         <p><strong>Rank:</strong> #6</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: ONGC</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_6cb9288d776837a094b2923a6329e280.setContent(html_ba7c9c6e64a0e1b88a72ca9d2d441f5a);
+            
+        
+
+        marker_e960e6b85927850ce5965c2e54296d12.bindPopup(popup_6cb9288d776837a094b2923a6329e280)
+        ;
+
+        
+    
+    
+            marker_e960e6b85927850ce5965c2e54296d12.bindTooltip(
+                `<div>
+                     Tamil Nadu: 188 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e960e6b85927850ce5965c2e54296d12.setIcon(icon_7f566ff6c1e6e0444e1ffed6c27b162e);
+            
+    
+            var marker_d406b64f40dccd6cafd5c0f2b487ba51 = L.marker(
+                [22.9868, 87.855],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_ed9fbdb13eb9a6059120a6d3e774a67b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7da2d0637c36b12517cfb23f0028f1e0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_aacd92a931874ab2669caeaf91d8b23a = $(`<div id="html_aacd92a931874ab2669caeaf91d8b23a" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: orange; margin-bottom: 15px;">🛢️ West Bengal (CBM)</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 362</p>                         <p><strong>Percentage:</strong> 4.8%</p>                         <p><strong>Rank:</strong> #4</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: Various PSC</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_7da2d0637c36b12517cfb23f0028f1e0.setContent(html_aacd92a931874ab2669caeaf91d8b23a);
+            
+        
+
+        marker_d406b64f40dccd6cafd5c0f2b487ba51.bindPopup(popup_7da2d0637c36b12517cfb23f0028f1e0)
+        ;
+
+        
+    
+    
+            marker_d406b64f40dccd6cafd5c0f2b487ba51.bindTooltip(
+                `<div>
+                     West Bengal (CBM): 362 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d406b64f40dccd6cafd5c0f2b487ba51.setIcon(icon_ed9fbdb13eb9a6059120a6d3e774a67b);
+            
+    
+            var marker_3ddf45c1f984ac7f9eaf107f150644a7 = L.marker(
+                [23.6102, 85.2799],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_1893192e356f946e114b905e5bb15adb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b01b5f2b8c4870a1e82ad2662b91a09e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d3e510a62ffad5758c78c006f3eab97f = $(`<div id="html_d3e510a62ffad5758c78c006f3eab97f" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: blue; margin-bottom: 15px;">🛢️ Jharkhand (CBM)</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 13</p>                         <p><strong>Percentage:</strong> 0.2%</p>                         <p><strong>Rank:</strong> #9</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: Various PSC</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_b01b5f2b8c4870a1e82ad2662b91a09e.setContent(html_d3e510a62ffad5758c78c006f3eab97f);
+            
+        
+
+        marker_3ddf45c1f984ac7f9eaf107f150644a7.bindPopup(popup_b01b5f2b8c4870a1e82ad2662b91a09e)
+        ;
+
+        
+    
+    
+            marker_3ddf45c1f984ac7f9eaf107f150644a7.bindTooltip(
+                `<div>
+                     Jharkhand (CBM): 13 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3ddf45c1f984ac7f9eaf107f150644a7.setIcon(icon_1893192e356f946e114b905e5bb15adb);
+            
+    
+            var marker_016efc0a99ae0c5a205b10578b95a569 = L.marker(
+                [22.9734, 78.6569],
+                {
+}
+            ).addTo(marker_cluster_893a550aba782ffa39f967511e1cfac8);
+        
+    
+            var icon_602353a274b58f40c438a45874cb9ca1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30182b96a0881b7ddcd6f9d6467ad850 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6b48fd48f113236b023a32b4cd583d86 = $(`<div id="html_6b48fd48f113236b023a32b4cd583d86" style="width: 100.0%; height: 100.0%;">                 <div style="width: 300px; font-family: Arial;">                     <h3 style="color: orange; margin-bottom: 15px;">🛢️ Madhya Pradesh (CBM)</h3>                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px;">                         <p><strong>Total Wells:</strong> 294</p>                         <p><strong>Percentage:</strong> 3.9%</p>                         <p><strong>Rank:</strong> #5</p>                     </div>                     <div style="background: #e3f2fd; padding: 10px; border-radius: 5px;">                         <h4 style="margin-top: 0;">📊 Quick Stats</h4>                         <p>• Wells per 1000 sq km: 0.0</p>                         <p>• Major Companies: Various PSC</p>                     </div>                     <hr>                     <p style="text-align: center; color: #666;">                         <em>Click marker for more details</em>                     </p>                 </div>                 </div>`)[0];
+                popup_30182b96a0881b7ddcd6f9d6467ad850.setContent(html_6b48fd48f113236b023a32b4cd583d86);
+            
+        
+
+        marker_016efc0a99ae0c5a205b10578b95a569.bindPopup(popup_30182b96a0881b7ddcd6f9d6467ad850)
+        ;
+
+        
+    
+    
+            marker_016efc0a99ae0c5a205b10578b95a569.bindTooltip(
+                `<div>
+                     Madhya Pradesh (CBM): 294 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_016efc0a99ae0c5a205b10578b95a569.setIcon(icon_602353a274b58f40c438a45874cb9ca1);
+            
+    
+            marker_cluster_893a550aba782ffa39f967511e1cfac8.addTo(map_ad75cadd849b50e7be8b36b617eb1a2f);
+        
+    
+            var marker_cluster_083941bad1bfa5961996987a8223227b = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_6e4aeafb0df88bbd75741b28322e9a88 = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(marker_cluster_083941bad1bfa5961996987a8223227b);
+        
+    
+            var icon_453a85d64e64791515b9171945f7e8ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2cd81edbde238c73996058f7d26c62f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_580bb8ad56eeba1a0d250f06e4b5e682 = $(`<div id="html_580bb8ad56eeba1a0d250f06e4b5e682" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #2E86AB;">🏢 ONGC Mumbai</h4>                     <p><strong>Type:</strong> Public</p>                     <p><strong>Wells:</strong> 7,315</p>                     <p><strong>Market Share:</strong> 97.7%</p>                 </div>                 </div>`)[0];
+                popup_2cd81edbde238c73996058f7d26c62f1.setContent(html_580bb8ad56eeba1a0d250f06e4b5e682);
+            
+        
+
+        marker_6e4aeafb0df88bbd75741b28322e9a88.bindPopup(popup_2cd81edbde238c73996058f7d26c62f1)
+        ;
+
+        
+    
+    
+            marker_6e4aeafb0df88bbd75741b28322e9a88.bindTooltip(
+                `<div>
+                     ONGC Mumbai - 7,315 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6e4aeafb0df88bbd75741b28322e9a88.setIcon(icon_453a85d64e64791515b9171945f7e8ec);
+            
+    
+            var marker_8e7ca0a817e66327a7b974210ebfdd4c = L.marker(
+                [30.3165, 78.0322],
+                {
+}
+            ).addTo(marker_cluster_083941bad1bfa5961996987a8223227b);
+        
+    
+            var icon_9f0bf81da3673560687eb89a389262df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_695c2e9a149f83cfdd08904b5bdd39fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91e65330810212fb03ec8874d195dc71 = $(`<div id="html_91e65330810212fb03ec8874d195dc71" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #2E86AB;">🏢 ONGC Dehradun</h4>                     <p><strong>Type:</strong> Public</p>                     <p><strong>Wells:</strong> 2,000</p>                     <p><strong>Market Share:</strong> 26.7%</p>                 </div>                 </div>`)[0];
+                popup_695c2e9a149f83cfdd08904b5bdd39fe.setContent(html_91e65330810212fb03ec8874d195dc71);
+            
+        
+
+        marker_8e7ca0a817e66327a7b974210ebfdd4c.bindPopup(popup_695c2e9a149f83cfdd08904b5bdd39fe)
+        ;
+
+        
+    
+    
+            marker_8e7ca0a817e66327a7b974210ebfdd4c.bindTooltip(
+                `<div>
+                     ONGC Dehradun - 2,000 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8e7ca0a817e66327a7b974210ebfdd4c.setIcon(icon_9f0bf81da3673560687eb89a389262df);
+            
+    
+            var marker_119a9c145649778f6c72c0c0cf09cad5 = L.marker(
+                [27.3692, 95.3269],
+                {
+}
+            ).addTo(marker_cluster_083941bad1bfa5961996987a8223227b);
+        
+    
+            var icon_07fa0c963947af2363d7677e99af5b3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60de07714b60df0c943f5a77eb4e6218 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b3b8bd588fe85c3d5fd7fbe24eafcdd = $(`<div id="html_0b3b8bd588fe85c3d5fd7fbe24eafcdd" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #2E86AB;">🏢 Oil India Duliajan</h4>                     <p><strong>Type:</strong> Public</p>                     <p><strong>Wells:</strong> 455</p>                     <p><strong>Market Share:</strong> 6.1%</p>                 </div>                 </div>`)[0];
+                popup_60de07714b60df0c943f5a77eb4e6218.setContent(html_0b3b8bd588fe85c3d5fd7fbe24eafcdd);
+            
+        
+
+        marker_119a9c145649778f6c72c0c0cf09cad5.bindPopup(popup_60de07714b60df0c943f5a77eb4e6218)
+        ;
+
+        
+    
+    
+            marker_119a9c145649778f6c72c0c0cf09cad5.bindTooltip(
+                `<div>
+                     Oil India Duliajan - 455 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_119a9c145649778f6c72c0c0cf09cad5.setIcon(icon_07fa0c963947af2363d7677e99af5b3c);
+            
+    
+            var marker_4526a49bee3373ebbb9091aa89129627 = L.marker(
+                [16.1667, 81.1333],
+                {
+}
+            ).addTo(marker_cluster_083941bad1bfa5961996987a8223227b);
+        
+    
+            var icon_da71df1ba79c0a4d003553ee42431f78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d5d0b02f00fd0d96a7db7b1a08e45e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b74824754ac2b81ce54c8136888ecd28 = $(`<div id="html_b74824754ac2b81ce54c8136888ecd28" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #2E86AB;">🏢 Reliance KG-D6</h4>                     <p><strong>Type:</strong> Private</p>                     <p><strong>Wells:</strong> 200</p>                     <p><strong>Market Share:</strong> 2.7%</p>                 </div>                 </div>`)[0];
+                popup_1d5d0b02f00fd0d96a7db7b1a08e45e3.setContent(html_b74824754ac2b81ce54c8136888ecd28);
+            
+        
+
+        marker_4526a49bee3373ebbb9091aa89129627.bindPopup(popup_1d5d0b02f00fd0d96a7db7b1a08e45e3)
+        ;
+
+        
+    
+    
+            marker_4526a49bee3373ebbb9091aa89129627.bindTooltip(
+                `<div>
+                     Reliance KG-D6 - 200 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4526a49bee3373ebbb9091aa89129627.setIcon(icon_da71df1ba79c0a4d003553ee42431f78);
+            
+    
+            var marker_415de09db9f2a2ac6586ff0cb0da7e31 = L.marker(
+                [26.2389, 73.0243],
+                {
+}
+            ).addTo(marker_cluster_083941bad1bfa5961996987a8223227b);
+        
+    
+            var icon_40f64cd8c1729c44e2d21f27f28d711c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e85f760ed5fae8e867e5c6571642911 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2416aad9976e5bef6b5abcb3c5de09c6 = $(`<div id="html_2416aad9976e5bef6b5abcb3c5de09c6" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #2E86AB;">🏢 Cairn Rajasthan</h4>                     <p><strong>Type:</strong> Private</p>                     <p><strong>Wells:</strong> 300</p>                     <p><strong>Market Share:</strong> 4.0%</p>                 </div>                 </div>`)[0];
+                popup_2e85f760ed5fae8e867e5c6571642911.setContent(html_2416aad9976e5bef6b5abcb3c5de09c6);
+            
+        
+
+        marker_415de09db9f2a2ac6586ff0cb0da7e31.bindPopup(popup_2e85f760ed5fae8e867e5c6571642911)
+        ;
+
+        
+    
+    
+            marker_415de09db9f2a2ac6586ff0cb0da7e31.bindTooltip(
+                `<div>
+                     Cairn Rajasthan - 300 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_415de09db9f2a2ac6586ff0cb0da7e31.setIcon(icon_40f64cd8c1729c44e2d21f27f28d711c);
+            
+    
+            marker_cluster_083941bad1bfa5961996987a8223227b.addTo(map_ad75cadd849b50e7be8b36b617eb1a2f);
+        
+    
+            var heat_map_b9e5c803004e1ef028919e71dab06b09 = L.heatLayer(
+                [[23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [23.0225, 72.5714], [27.0238, 74.2179], [27.0238, 74.2179], [27.0238, 74.2179], [27.0238, 74.2179], [27.0238, 74.2179], [27.0238, 74.2179], [27.0238, 74.2179], [27.0238, 74.2179], [27.0238, 74.2179], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [26.2006, 92.9376], [23.9408, 91.9882], [15.9129, 79.74], [15.9129, 79.74], [11.1271, 78.6569], [11.1271, 78.6569], [11.1271, 78.6569], [22.9868, 87.855], [22.9868, 87.855], [22.9868, 87.855], [22.9868, 87.855], [22.9868, 87.855], [22.9868, 87.855], [22.9868, 87.855], [22.9734, 78.6569], [22.9734, 78.6569], [22.9734, 78.6569], [22.9734, 78.6569], [22.9734, 78.6569]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+}
+            );
+        
+    
+            var layer_control_efbb04924819ae1f51319f8d7660b916_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_74ff761098667be18ad34ee0aba915f5,
+                    "Light Mode" : tile_layer_4797eb1fcfaf95c8a98d482d01eae07e,
+                    "Dark Mode" : tile_layer_9bd196c9e7af4f4b4f91ea75dbe7fb32,
+                },
+                overlays :  {
+                    "Oil Wells" : marker_cluster_893a550aba782ffa39f967511e1cfac8,
+                    "Companies" : marker_cluster_083941bad1bfa5961996987a8223227b,
+                    "Well Density Heatmap" : heat_map_b9e5c803004e1ef028919e71dab06b09,
+                },
+            };
+            let layer_control_efbb04924819ae1f51319f8d7660b916 = L.control.layers(
+                layer_control_efbb04924819ae1f51319f8d7660b916_layers.base_layers,
+                layer_control_efbb04924819ae1f51319f8d7660b916_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_ad75cadd849b50e7be8b36b617eb1a2f);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_ad75cadd849b50e7be8b36b617eb1a2f);
+        
+    
+            var measure_control_fae300bd05805ea3c6e162d9dcb5fef7 = new L.Control.Measure(
+                {
+  "position": "topright",
+  "primaryLengthUnit": "meters",
+  "secondaryLengthUnit": "miles",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_ad75cadd849b50e7be8b36b617eb1a2f.addControl(measure_control_fae300bd05805ea3c6e162d9dcb5fef7);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            var options = {
+              position: "topleft",
+              draw: {},
+              edit: {},
+            }
+                // FeatureGroup is to store editable layers.
+                var drawnItems_draw_control_63b79880c43b74bd709f7e25a3b295b4 =
+                    new L.featureGroup().addTo(
+                        map_ad75cadd849b50e7be8b36b617eb1a2f
+                    );
+
+            options.edit.featureGroup = drawnItems_draw_control_63b79880c43b74bd709f7e25a3b295b4;
+            var draw_control_63b79880c43b74bd709f7e25a3b295b4 = new L.Control.Draw(
+                options
+            ).addTo( map_ad75cadd849b50e7be8b36b617eb1a2f );
+            map_ad75cadd849b50e7be8b36b617eb1a2f.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;
+                var coords = JSON.stringify(layer.toGeoJSON());
+                layer.on('click', function() {
+                    alert(coords);
+                    console.log(coords);
+                });
+                drawnItems_draw_control_63b79880c43b74bd709f7e25a3b295b4.addLayer(layer);
+            });
+            map_ad75cadd849b50e7be8b36b617eb1a2f.on('draw:created', function(e) {
+                drawnItems_draw_control_63b79880c43b74bd709f7e25a3b295b4.addLayer(e.layer);
+            });
+
+            
+        
+</script>
+</html>

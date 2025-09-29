@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f5959713947c585fc876c520f5c390af {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f5959713947c585fc876c520f5c390af" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f5959713947c585fc876c520f5c390af = L.map(
+                "map_f5959713947c585fc876c520f5c390af",
+                {
+                    center: [15.0, 80.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c9b69e5444f7d18759180e3eb12a86dc = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c9b69e5444f7d18759180e3eb12a86dc.addTo(map_f5959713947c585fc876c520f5c390af);
+        
+    
+            var marker_927d0919bc58176945d8d5c3f0c7914d = L.marker(
+                [19.5, 72.0],
+                {
+}
+            ).addTo(map_f5959713947c585fc876c520f5c390af);
+        
+    
+            var icon_3457eff0f2610b28e343e8049405f52a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4048851161c18474790e92e8018fad09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c8fb9514d57faaffd806f81430a4d26 = $(`<div id="html_6c8fb9514d57faaffd806f81430a4d26" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #1976D2;">🌊 Mumbai High</h4>                     <p><strong>Offshore Wells:</strong> 800</p>                     <p><strong>Water Depth:</strong> 50-2000m</p>                     <p><strong>Production:</strong> Active</p>                 </div>                 </div>`)[0];
+                popup_4048851161c18474790e92e8018fad09.setContent(html_6c8fb9514d57faaffd806f81430a4d26);
+            
+        
+
+        marker_927d0919bc58176945d8d5c3f0c7914d.bindPopup(popup_4048851161c18474790e92e8018fad09)
+        ;
+
+        
+    
+    
+            marker_927d0919bc58176945d8d5c3f0c7914d.bindTooltip(
+                `<div>
+                     Mumbai High - 800 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_927d0919bc58176945d8d5c3f0c7914d.setIcon(icon_3457eff0f2610b28e343e8049405f52a);
+            
+    
+            var marker_2ce1774d1ce62e4633e04fba540eed9a = L.marker(
+                [16.0, 81.0],
+                {
+}
+            ).addTo(map_f5959713947c585fc876c520f5c390af);
+        
+    
+            var icon_e9955c8f0f223750414327d31f8d0693 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cbf3e73e08e6d09f26270f39b0fe5468 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14adf24f71df30148231bb5bd422ebfb = $(`<div id="html_14adf24f71df30148231bb5bd422ebfb" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #1976D2;">🌊 KG-D6 Block</h4>                     <p><strong>Offshore Wells:</strong> 200</p>                     <p><strong>Water Depth:</strong> 50-2000m</p>                     <p><strong>Production:</strong> Active</p>                 </div>                 </div>`)[0];
+                popup_cbf3e73e08e6d09f26270f39b0fe5468.setContent(html_14adf24f71df30148231bb5bd422ebfb);
+            
+        
+
+        marker_2ce1774d1ce62e4633e04fba540eed9a.bindPopup(popup_cbf3e73e08e6d09f26270f39b0fe5468)
+        ;
+
+        
+    
+    
+            marker_2ce1774d1ce62e4633e04fba540eed9a.bindTooltip(
+                `<div>
+                     KG-D6 Block - 200 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2ce1774d1ce62e4633e04fba540eed9a.setIcon(icon_e9955c8f0f223750414327d31f8d0693);
+            
+    
+            var marker_008d0edd5e9bbab8127524a8b0c655c5 = L.marker(
+                [11.0, 79.0],
+                {
+}
+            ).addTo(map_f5959713947c585fc876c520f5c390af);
+        
+    
+            var icon_be304f443471ed384c3e95460b629ef7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f010e6607fceb319147202b01f477dce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3d459856762725527ccae476c80c2d7 = $(`<div id="html_f3d459856762725527ccae476c80c2d7" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #1976D2;">🌊 Cauvery Basin</h4>                     <p><strong>Offshore Wells:</strong> 150</p>                     <p><strong>Water Depth:</strong> 50-2000m</p>                     <p><strong>Production:</strong> Active</p>                 </div>                 </div>`)[0];
+                popup_f010e6607fceb319147202b01f477dce.setContent(html_f3d459856762725527ccae476c80c2d7);
+            
+        
+
+        marker_008d0edd5e9bbab8127524a8b0c655c5.bindPopup(popup_f010e6607fceb319147202b01f477dce)
+        ;
+
+        
+    
+    
+            marker_008d0edd5e9bbab8127524a8b0c655c5.bindTooltip(
+                `<div>
+                     Cauvery Basin - 150 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_008d0edd5e9bbab8127524a8b0c655c5.setIcon(icon_be304f443471ed384c3e95460b629ef7);
+            
+    
+            var marker_002807494a6a9c62cc6315957c2e0ff1 = L.marker(
+                [16.5, 81.5],
+                {
+}
+            ).addTo(map_f5959713947c585fc876c520f5c390af);
+        
+    
+            var icon_e406eb78ae32fc6da1a8d060294590d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ddf67f208846b8bb5f98f9abc26972ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6f13d4a86946ab3759d50b797dc26da = $(`<div id="html_c6f13d4a86946ab3759d50b797dc26da" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #1976D2;">🌊 Krishna-Godavari</h4>                     <p><strong>Offshore Wells:</strong> 100</p>                     <p><strong>Water Depth:</strong> 50-2000m</p>                     <p><strong>Production:</strong> Active</p>                 </div>                 </div>`)[0];
+                popup_ddf67f208846b8bb5f98f9abc26972ef.setContent(html_c6f13d4a86946ab3759d50b797dc26da);
+            
+        
+
+        marker_002807494a6a9c62cc6315957c2e0ff1.bindPopup(popup_ddf67f208846b8bb5f98f9abc26972ef)
+        ;
+
+        
+    
+    
+            marker_002807494a6a9c62cc6315957c2e0ff1.bindTooltip(
+                `<div>
+                     Krishna-Godavari - 100 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_002807494a6a9c62cc6315957c2e0ff1.setIcon(icon_e406eb78ae32fc6da1a8d060294590d5);
+            
+    
+            var marker_1f3e4de6617a5073087e6ad75c1bb5a8 = L.marker(
+                [22.0, 72.5],
+                {
+}
+            ).addTo(map_f5959713947c585fc876c520f5c390af);
+        
+    
+            var icon_846a967f8fd6f2cd030683ab7c2b0c78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7a16036718cbdf02043482fbeaf156d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ef729792bfc26f10e71ec7ab6d709ad = $(`<div id="html_1ef729792bfc26f10e71ec7ab6d709ad" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #1976D2;">🌊 Cambay Basin</h4>                     <p><strong>Offshore Wells:</strong> 200</p>                     <p><strong>Water Depth:</strong> 50-2000m</p>                     <p><strong>Production:</strong> Active</p>                 </div>                 </div>`)[0];
+                popup_7a16036718cbdf02043482fbeaf156d3.setContent(html_1ef729792bfc26f10e71ec7ab6d709ad);
+            
+        
+
+        marker_1f3e4de6617a5073087e6ad75c1bb5a8.bindPopup(popup_7a16036718cbdf02043482fbeaf156d3)
+        ;
+
+        
+    
+    
+            marker_1f3e4de6617a5073087e6ad75c1bb5a8.bindTooltip(
+                `<div>
+                     Cambay Basin - 200 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f3e4de6617a5073087e6ad75c1bb5a8.setIcon(icon_846a967f8fd6f2cd030683ab7c2b0c78);
+            
+    
+            var marker_9171e4b7fc3e5cd50cc86df505ddff31 = L.marker(
+                [24.0, 93.0],
+                {
+}
+            ).addTo(map_f5959713947c585fc876c520f5c390af);
+        
+    
+            var icon_f5dda69696c390cf6a2a7e15c8a03b87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f379fe3d909e81bf08f1d1f36ed95004 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe6e96d55b89a53bcbcccfd517d6e832 = $(`<div id="html_fe6e96d55b89a53bcbcccfd517d6e832" style="width: 100.0%; height: 100.0%;">                 <div style="width: 250px;">                     <h4 style="color: #1976D2;">🌊 Assam Shelf</h4>                     <p><strong>Offshore Wells:</strong> 46</p>                     <p><strong>Water Depth:</strong> 50-2000m</p>                     <p><strong>Production:</strong> Active</p>                 </div>                 </div>`)[0];
+                popup_f379fe3d909e81bf08f1d1f36ed95004.setContent(html_fe6e96d55b89a53bcbcccfd517d6e832);
+            
+        
+
+        marker_9171e4b7fc3e5cd50cc86df505ddff31.bindPopup(popup_f379fe3d909e81bf08f1d1f36ed95004)
+        ;
+
+        
+    
+    
+            marker_9171e4b7fc3e5cd50cc86df505ddff31.bindTooltip(
+                `<div>
+                     Assam Shelf - 46 wells
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9171e4b7fc3e5cd50cc86df505ddff31.setIcon(icon_f5dda69696c390cf6a2a7e15c8a03b87);
+            
+</script>
+</html>
